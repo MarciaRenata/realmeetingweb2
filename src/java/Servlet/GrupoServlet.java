@@ -67,16 +67,10 @@ public class GrupoServlet extends HttpServlet {
             throws ServletException, IOException {
         
         
-        Usuario usuario = new Usuario();
-        Usuario usuario2 = new Usuario();
+        Usuario usuario = new Usuario("Marcia Renata", "marciarenata@gmail.com", "123");
+        Usuario usuario2 = new Usuario("Maria Silva", "mariasilva@gmail.com", "456");
         Evento evento = new Evento();        
         Grupo grupo = new Grupo();
-        
-        usuario.setNome("Marcia Renata");
-        usuario.setEmail("marciarenata@gmail.com");
-        
-        usuario2.setNome("Maria Silva");
-        usuario2.setEmail("mariasilva@gmail.com");
         
         ArrayList<Usuario> usuarios = new ArrayList();
         usuarios.add(usuario);

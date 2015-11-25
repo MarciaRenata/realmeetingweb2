@@ -13,8 +13,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Usuario;
 
 /**
  *
@@ -49,26 +47,18 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                
-            String exLogin="marciarenata@gmail.com", exPass="123", nome="Marcia Renata" ;
+            
             
             String login = request.getParameter("login");
             String password = request.getParameter("password");
             
             if(JdbcDao.JDBCUsuario.checarLogin(login, password) == 0){
+                request.getSession(true).setAttribute("nome",JdbcDao.JDBCUsuario.getUser(login));
                 RequestDispatcher dispatcher = request.getRequestDispatcher("PagPrincipalUsuarioLogado.jsp");
                 dispatcher.forward(request, response);
-                request.getSession(true).setAttribute("nome",nome);
-            }
-            
                 
-            /*        
-            if(exLogin.equals(login) && exPass.equals(password)) {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("PagPrincipalUsuarioLogado.jsp");
-                dispatcher.forward(request, response);
-                request.getSession(true).setAttribute("nome",nome);
-            } */
-                    else {
+                
+            } else {
                 request.setAttribute("mensagem","Usuário ou Senha Inválidos!");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
                 dispatcher.forward(request, response);

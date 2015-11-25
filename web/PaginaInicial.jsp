@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +11,8 @@
         <img src="realMeeting1.png" id="logo" alt="logo"/>
         <p></p>
         <input type="submit" value="Cadastre-se" onclick="location.href='Cadastro.jsp'">
-        <br>
+        <br/>
         <input type="submit" value="Login" onclick="location.href='Login.jsp'">
+        <br/>
     </body>
 </html>

@@ -1,5 +1,3 @@
-
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <%@include file="/SessionControl.jsp" %>
@@ -18,7 +16,10 @@
         <h1><img src="Foto.png" id="fotoPerfil" alt="FPerfil"/> <c:out value="    ${nome}" /></h1>
         
         <p></p>
-        <h3>Meus Grupos</h3>
+        <h3><a href ="GrupoServlet">Meus Grupos</a></h3>
+        <h3><a href ="CriarGrupoServlet.jsp">Criar Grupos</a></h3>
+        <h3><a href ="PesquisarGrupoServlet.jsp">Pesquisar Grupos</a></h3>
+        
         <a href ="GrupoServlet"><img src="Grupo1.png" id="grupo1" alt="grupo1"/></a>
         <a><img src="Grupo2.png" id="grupo2" alt="grupo2"/></a>
         <a><img src="Grupo3.png" id="grupo3" alt="grupo3"/></a>

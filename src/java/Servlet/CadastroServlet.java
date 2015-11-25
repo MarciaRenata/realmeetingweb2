@@ -5,8 +5,12 @@
  */
 package Servlet;
 
+import JdbcDao.JDBCUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -78,12 +82,15 @@ public class CadastroServlet extends HttpServlet {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
         
-        Usuario usuario = new Usuario();
-        usuario.setNome(nome);
-        usuario.setEmail(email);
-        usuario.setSenha(senha);
+        Usuario usuario = new Usuario(nome, email, senha);
         
-        //add no banco de dados
+        
+            JDBCUsuario usuario1;
+            usuario1 = new JDBCUsuario();
+            usuario1.inserirUsuario(usuario);
+            request.setAttribute("sucesso", "Usuario cadastrado bem sucedido");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
+            dispatcher.forward(request, response);
         
         
     }

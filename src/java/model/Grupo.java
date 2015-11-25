@@ -18,7 +18,7 @@ public class Grupo {
     
     private String descricao;
     
-    private ArrayList<String> topicos;
+    private ArrayList<Topico> topicos;
     
     private ArrayList<Usuario> membros;
     
@@ -85,14 +85,14 @@ public class Grupo {
     /**
      * @return the topicos
      */
-    public ArrayList<String> getTopicos() {
+    public ArrayList<Topico> getTopicos() {
         return topicos;
     }
 
     /**
      * @param topicos the topicos to set
      */
-    public void setTopicos(ArrayList<String> topicos) {
+    public void setTopicos(ArrayList<Topico> topicos) {
         this.topicos = topicos;
     }
 }

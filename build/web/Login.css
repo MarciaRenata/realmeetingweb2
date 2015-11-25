@@ -7,7 +7,7 @@ body{
 #tudo {
 	width: 760px;
 	margin:0 auto;			
-	text-align:center; /* "remédio" para o hack do IE */	
+	text-align:center; 
 	}
 #conteudo {
 	padding: 5px;

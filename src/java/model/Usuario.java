@@ -23,6 +23,11 @@ public class Usuario {
     private ArrayList<Grupo> grupo;
     
     
+    public Usuario(String nome, String email, String senha){
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
     
     /**
      * @return the nome
@@ -71,6 +76,13 @@ public class Usuario {
      */
     public void setGrupo(ArrayList<Grupo> grupo) {
         this.grupo = grupo;
+    }
+
+    /**
+     * @return the senha
+     */
+    public String getSenha() {
+        return senha;
     }
     
 }

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : Evento
-    Created on : Oct 28, 2015, 9:50:53 AM
-    Author     : Pão
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
